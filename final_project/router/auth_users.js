@@ -55,9 +55,8 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
 regd_users.delete("/auth/review/:isbn", (req, res) => {
     const isbn = req.params.isbn;
     let book = books[isbn];
-    let bookReview = book.reviews;
-    books.remove({bookReview});
-    res.send(`Review "${bookReview}" deleted from book ${isbn}.`);
+    let review = book.reviews;
+    res.send(`Review "${review}" deleted from book ${isbn}.`);
   });
 
 module.exports.authenticated = regd_users;
